@@ -395,7 +395,7 @@ Geo::PostalCode::NoBD - Find closest zipcodes, distance, latitude, and longitude
 
   use Geo::PostalCode::NoBD;
 
-  my $gp = Geo::PostalCode->new(csvfile => "us_zip_codes.csv");
+  my $gp = Geo::PostalCode::NoBD->new(csvfile => "us_zip_codes.csv");
 
   my $record = $gp->lookup_postal_code(postal_code => '07302');
   my $lat   = $record->{lat};
@@ -459,7 +459,7 @@ and potentially send a thank you note to those who made it available.
                                  [earth_radius => earth_radius_in_desired_units ,]
                                 );
 
-Returns a new Geo::PostalCode::DB object.
+Returns a new Geo::PostalCode::NoDB object.
 
 You can control the distance units used by providing a C<units>
 option, which can be C<mi> for miles (the default) or C<km> for

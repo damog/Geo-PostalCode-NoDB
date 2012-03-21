@@ -5,7 +5,7 @@ NAME
 SYNOPSIS
       use Geo::PostalCode::NoBD;
 
-      my $gp = Geo::PostalCode->new(csvfile => "us_zip_codes.csv");
+      my $gp = Geo::PostalCode::NoBD->new(csvfile => "us_zip_codes.csv");
 
       my $record = $gp->lookup_postal_code(postal_code => '07302');
       my $lat   = $record->{lat};
@@ -60,7 +60,7 @@ DATA
 METHODS
     $gp = Geo::PostalCode::NoDB->new(csvfile => $csv_file_path, [units => mi
     | km ,] [earth_radius => earth_radius_in_desired_units ,] );
-        Returns a new Geo::PostalCode::DB object.
+        Returns a new Geo::PostalCode::NoDB object.
 
         You can control the distance units used by providing a `units'
         option, which can be `mi' for miles (the default) or `km' for
